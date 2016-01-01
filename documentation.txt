@@ -1,0 +1,40 @@
+
+Have you ever had to send out huge, long chunks of group texts to coordinate the right mealtime with your blocking group? Or have you ever been stranded alone in a dining hall because you couldn't find a friend to eat with you at the last minute? Our Project, ByteTime is a social networking app for the iphone which eliminates such problems.  Our user-friendly interface will allows users to efficiently schedule meal times with anyone in their friends’ circles with just a tap of the screen. You can let your friends on BytePlan see when you plan to have a meal in any location on campus, and they have the option to join you by adding themselves to your "table" on BytePlan's interface. 
+
+The project can be compiled and run using the Mac OS application Xcode, with instruction per the bottom of the page. Xcode allows the user to run the app on an iphone simulator. Once, run, the app will open to the login screen in which existing users may log on. New users may select the "register" button to bring them to the register screen which contains a form which they may fill out to create a user account and sign in. Once the user is signed in, they will be taken to their newsfeed. 
+
+The newsfeed contains all of the 'tables' created by the user and the users friends. Each 'table' represents a meal, and includes information regarding when the meal will take place, where the meal will occur, which user created the table and which other users have joined the table. In the newsfeed, tables are sorted in ascending order of the date at which the meal will take place. Each table in the newsfeed has a join button, which allows users to join their friends tables. At the bottom of the newsfeed is a toolbar which contains a logout button, which allows users to logout and return to the register screen. The app is coded such that each time the newsfeed is refreshed a query is sent to the backend database, deleting any 'tables' who's time has already passed, thus keeping the newsfeed constantly up to date. 
+
+The top of the newsfeed screen contains two buttons in the navigation bar, on the left a table icon which will bring you to the table manager screen and on the right a friend icon, which will bring you to the friend manager screen. The table manager screen allows users to create new tables. It also contains links to a "my tables" screen and a "joined tabes" screen. The "my tables" screen shows users the tables they have already created, and allows them to delete these tables using an 'edit' button in the top right corner of the screen. The "joined tables" screen shows users which of their friends tables they have already joined. Here, users have the option to "unjoin" any of these tables. Both the "joined" and "my tables" screens feature a "home" button on the button, which can be used to quickly return the user to the home screen. The friend manager screen allows users to follow other users. In order to follow another user, the current user must know the (casesensitive) username of that user, allowing for a degree of privacy. The friend manager screen also contains links to a "followers" screen and a "following" screen. The "followers" screen lists which users are following the current user. The "following" screen lists which users the current user is following, and allows the user to unfollow any of them via an "edit" button in the top right corner of the screen. 
+
+*Note: we're using a Parse library which we didn't export because as long as you have internet, there is a "Parse Id" embedded in our project code, which will direct everything onto that cloud library.
+
+How to run the program on your computer:
+
+In your "ByteTime Project" folder, you should have these three items:
+- ByteTime 4 folder
+- the ByteTime4.xcodeproj project file
+- Parse.framework folder
+
+1. (Assuming you have Xcode on your computer), double click the ByteTime4.xcodeproj file and open it. 
+
+2. Drag the Parse.framework folder into the left of your project screen, under the target "ByteTime4" > Frameworks. Make sure you check "Copy items into destination group's folder (if needed)" and in Add to Targets, make sure ByteTime4 is checked.
+
+3. Go to the top of the left panel where it says ByteTime4 2 targets. Click on that, and click on the Build Phases tab.
+
+4. If under "Link Binary with Libraries" it says 14 items, then you're good to go! Just compile and run on the iPhone simulator.
+
+5. If it instead says 4 items, or less than 14 items, open it and click the + button. Then manually add these libraries: 
+	¥	AudioToolbox.framework 
+	¥	CFNetwork.framework
+	¥	CoreGraphics.framework
+	¥	CoreLocation.framework
+	¥	libz.1.1.3.dylib
+	¥	MobileCoreServices.framework
+	¥	QuartzCore.framework
+	¥	Security.framework
+	¥	StoreKit.framework
+	¥	SystemConfiguration.framework
+
+
+6. Then compile and run.
